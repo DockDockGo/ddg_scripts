@@ -37,14 +37,14 @@ tmux select-pane -t 1
 tmux send-keys "export MAP_NAME=svd_demo" Enter
 tmux send-keys "export MY_ROBOT=mp_400" Enter
 tmux send-keys "export Number_of_Robots=3" Enter
-tmux send-keys "sleep 10 && ros2 launch neo_simulation2 multi_robot_navigation.launch.py" Enter
+tmux send-keys "sleep 6 && ros2 launch neo_simulation2 multi_robot_navigation.launch.py" Enter
 
 # Run rviz
 tmux select-pane -t 2
 tmux send-keys "export MAP_NAME=svd_demo" Enter
 tmux send-keys "export MY_ROBOT=mp_400" Enter
 tmux send-keys "export Number_of_Robots=3" Enter
-tmux send-keys "sleep 15 && ros2 launch neo_nav2_bringup rviz_launch.py rviz_config:=install/neo_nav2_bringup/share/neo_nav2_bringup/rviz/svd_demo_final.rviz" Enter
+tmux send-keys "sleep 7 && ros2 launch neo_nav2_bringup rviz_launch.py rviz_config:=install/neo_nav2_bringup/share/neo_nav2_bringup/rviz/svd_demo_final.rviz" Enter
 
 # Run rviz
 tmux select-pane -t 3
