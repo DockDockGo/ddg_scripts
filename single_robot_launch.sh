@@ -27,14 +27,20 @@ tmux splitw -h -p 33 # split it into two halves
 
 # Run the single robot simulation
 tmux select-pane -t 0
+tmux send-keys "export MAP_NAME=svd_demo" Enter
+tmux send-keys "export MY_ROBOT=mp_400" Enter
 tmux send-keys "ros2 launch neo_simulation2 simulation.launch.py" Enter
 
 # Run the run single robot navigation
 tmux select-pane -t 1
+tmux send-keys "export MAP_NAME=svd_demo" Enter
+tmux send-keys "export MY_ROBOT=mp_400" Enter
 tmux send-keys "ros2 launch neo_simulation2 navigation.launch.py" Enter
 
 # Run rviz
 tmux select-pane -t 2
+tmux send-keys "export MAP_NAME=svd_demo" Enter
+tmux send-keys "export MY_ROBOT=mp_400" Enter
 tmux send-keys "ros2 launch neo_nav2_bringup rviz_launch.py" Enter
 
 # Attach to the tmux session
