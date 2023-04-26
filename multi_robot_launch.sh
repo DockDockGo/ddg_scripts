@@ -27,31 +27,40 @@ tmux splitw -h -p 40 # split it into two halves
 
 # Run the single robot simulation
 tmux select-pane -t 0
-tmux send-keys "export MAP_NAME=svd_demo" Enter
+# tmux send-keys "export MAP_NAME=svd_demo" Enter
+# tmux send-keys "export MAP_NAME=workspace_0" Enter
+tmux send-keys "export MAP_NAME=aws" Enter
 tmux send-keys "export MY_ROBOT=mp_400" Enter
 tmux send-keys "export Number_of_Robots=3" Enter
 tmux send-keys "ros2 launch neo_simulation2 multi_robot_simulation.launch.py" Enter
 
 # Run the run single robot navigation
 tmux select-pane -t 1
-tmux send-keys "export MAP_NAME=svd_demo" Enter
+# tmux send-keys "export MAP_NAME=svd_demo" Enter
+# tmux send-keys "export MAP_NAME=workspace_0" Enter
+tmux send-keys "export MAP_NAME=aws" Enter
+
 tmux send-keys "export MY_ROBOT=mp_400" Enter
 tmux send-keys "export Number_of_Robots=3" Enter
 tmux send-keys "sleep 6 && ros2 launch neo_simulation2 multi_robot_navigation.launch.py" Enter
 
 # Run rviz
 tmux select-pane -t 2
-tmux send-keys "export MAP_NAME=svd_demo" Enter
+# tmux send-keys "export MAP_NAME=svd_demo" Enter
+# tmux send-keys "export MAP_NAME=workspace_0" Enter
+tmux send-keys "export MAP_NAME=aws" Enter
 tmux send-keys "export MY_ROBOT=mp_400" Enter
 tmux send-keys "export Number_of_Robots=3" Enter
 tmux send-keys "sleep 7 && ros2 launch neo_nav2_bringup rviz_launch.py rviz_config:=install/neo_nav2_bringup/share/neo_nav2_bringup/rviz/svd_demo_final.rviz" Enter
 
-# Run rviz
+# Run multi-robot commander
 tmux select-pane -t 3
-tmux send-keys "export MAP_NAME=svd_demo" Enter
+# tmux send-keys "export MAP_NAME=svd_demo" Enter
+# tmux send-keys "export MAP_NAME=workspace_0" Enter
+tmux send-keys "export MAP_NAME=aws" Enter
 tmux send-keys "export MY_ROBOT=mp_400" Enter
 tmux send-keys "export Number_of_Robots=3" Enter
-tmux send-keys "sleep 30 && ros2 run multi_navigator multi_commander" Enter
+tmux send-keys "sleep 60 && ros2 run multi_navigator multi_commander" Enter
 
 # Attach to the tmux session
 tmux -2 attach-session -t $session_name -c ~/mp_400_workspace
