@@ -23,3 +23,5 @@ To launch multi robot simulation use this:
 ```
 bash multi_robot_launch.sh
 ```
+
+**Note**: You can change the number of robots spawned and the spawn environment by changing the [`map`](https://github.com/DockDockGo/ddg_scripts/blob/d4efecb0f0b07bbca49d0fcee8c18fd4ef24b5d2/multi_robot_launch.sh#L8) and [`num_robots`](https://github.com/DockDockGo/ddg_scripts/blob/d4efecb0f0b07bbca49d0fcee8c18fd4ef24b5d2/multi_robot_launch.sh#LL9C1-L9C1) field inside `multi_robot_launch.sh`
