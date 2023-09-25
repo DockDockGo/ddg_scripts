@@ -58,7 +58,7 @@ tmux select-pane -t 3
 tmux send-keys "export MAP_NAME=\"$map\"" Enter
 tmux send-keys "export MY_ROBOT=mp_400" Enter
 tmux send-keys "export Number_of_Robots=\"$num_robots\"" Enter
-tmux send-keys "sleep 20 && ros2 launch ddg_multi_robot_planner multi_robot_planner.launch.py" Enter 
+tmux send-keys "sleep 30 && ros2 launch ddg_multi_robot_planner multi_robot_planner.launch.py" Enter 
 # tmux send-keys "sleep 60 && ros2 run multi_navigator multi_commander" Enter 
 
 
